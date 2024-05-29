@@ -1,24 +1,24 @@
 /* styles.css */
 body {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 /* Increase specificity for accordion styles */
 .navbar + .accordion .accordion-item {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 /* Override default accordion header styles */
 .accordion-header {
-    background-color: black !important;
-    color: white !important;
+    background-color: white !important;
+    color: black !important;
 }
 
 
 .navbar {
-    background-color: black !important;
-    color: white; /* White text color */
+    background-color: white !important;
+    color: black; /* White text color */
     height: 150px; /* Vertically extend by about 3 times */
     justify-content: center;
 }
