@@ -1,134 +1,218 @@
-/* styles.css */
+/* General body styling */
 body {
-    background-color: #f0f0f0 !important; /* Light grey background for the body */
-    color: #343a40 !important; /* Dark grey text for good readability */
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for the entire site */
-    font-size: 18px !important; /* Slightly larger font size for readability */
-    line-height: 1.8 !important; /* Comfortable line height */
-    letter-spacing: 0.5px !important; /* Slightly increased letter spacing */
-    margin: 0 !important;
-    padding: 0 !important;
+    background-color: black; /* Black background for the body sides */
+    font-family: 'Courier New', serif !important; /* Global font family */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body takes up the full height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Wrapper to center the container and add side images */
+.wrapper {
+    position: relative;
+    max-width: 1200px; /* Optional: Set a max-width for your content */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0px; /* Add some padding to your content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Left and Right side images */
+.wrapper::before,
+.wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px; /* Adjust the width as needed */
+    background-repeat: repeat-y; /* Repeat vertically */
+    background-size: 100% auto; /* Scale to full width and repeat vertically */
+}
+
+.wrapper::before {
+    left: -200px; /* Adjust the left position as needed */
+    background-image: url('/assets/left-side-image.jpg'); /* Path to your left side image */
+}
+
+.wrapper::after {
+    right: -200px; /* Adjust the right position as needed */
+    background-image: url('/assets/right-side-image.jpg'); /* Path to your right side image */
+}
+
+/* Main content container styling */
+.container {
+    background-image: url('/assets/background.jpg'); /* Path to your background image */
+    background-repeat: repeat; /* Repeat both horizontally and vertically */
+    background-size: auto; /* Ensure the image repeats without scaling */
+    background-position: top center; /* Center the image horizontally at the top */
+    max-width: 1200px; /* Optional: Set a max-width for your content */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 30px; /* Add some padding to your content */
+    color: #343a40; /* Dark grey text for readability */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Specific container margin-top adjustment */
+.mt-5 {
+    margin-top: 0 !important; /* Remove top margin */
+}
+
+/* Headings styling */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for headings */
-    color: #212529 !important; /* Dark color for headings */
-    margin-bottom: 1rem !important;
+    font-family: 'Courier New', serif !important; /* Consistent font for headings */
+    color: #212529; /* Dark color for headings */
+    margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: 3.5rem !important; /* Large size for main headings */
-    letter-spacing: 1px !important;
+    font-size: 3.5rem; /* Large size for main headings */
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 2rem !important; /* Slightly smaller for sub-headings */
-    letter-spacing: 0.75px !important;
+    font-size: 2rem; /* Slightly smaller for sub-headings */
+    letter-spacing: 0.75px;
 }
 
 h3 {
-    font-size: 1.75rem !important;
-    letter-spacing: 0.5px !important;
+    font-size: 1.75rem;
+    letter-spacing: 0.5px;
 }
 
+/* Paragraphs styling */
 p {
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for paragraphs */
-    font-size: 1.2rem !important;
-    line-height: 1.8 !important;
-    margin-bottom: 1.5rem !important;
+    font-family: 'Courier New', serif !important; /* Consistent font for paragraphs */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
+/* Links styling */
 a {
-    color: #c0392b !important; /* Elegant dark red for links */
-    text-decoration: none !important; /* Remove underline for a clean look */
+    color: #343a40; /* Elegant dark red for links */
+    text-decoration: none; /* Remove underline for a clean look */
 }
 
 a:hover {
-    color: #e74c3c !important; /* Slightly lighter red on hover */
-    text-decoration: underline !important; /* Underline links on hover */
+    color: #f6c7adc5; /* Slightly lighter red on hover */
+    text-decoration: underline; /* Underline links on hover */
 }
 
+/* Navbar styling */
 .navbar {
-    background-color: #f0f0f0 !important; /* Light grey background for navbar */
-    color: #343a40 !important; /* Dark grey text color */
-    height: 150px !important; /* Vertically extend by about 3 times */
-    justify-content: center !important;
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for navbar */
-    border-bottom: 1px solid #bcbcbc !important; /* Slightly darker border for separation */
+    background-color: #f6c7adc5; /* Light grey background for navbar */
+    color: #343a40; /* Dark grey text color */
+    height: 150px; /* Vertically extend by about 3 times */
+    justify-content: center;
+    font-family: 'Courier New', serif !important; /* Consistent font for navbar */
+    border-bottom: 1px solid #bcbcbc; /* Slightly darker border for separation */
 }
 
 .navbar-brand {
-    position: absolute !important;
-    left: 1rem !important;
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for navbar brand */
-    font-size: 1.5rem !important;
-    color: #343a40 !important; /* Dark grey text color */
+    position: absolute;
+    left: 1rem;
+    font-family: 'Courier New', serif !important; /* Consistent font for navbar brand */
+    font-size: 1.5rem;
+    color: #343a40; /* Dark grey text color */
 }
 
 .navbar-text {
-    font-size: 3rem !important; /* Increased font size for Hollebar */
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for navbar text */
-    color: #343a40 !important; /* Dark grey text color */
+    font-size: 3rem; /* Increased font size for Hollebar */
+    font-family: 'Courier New', serif !important; /* Consistent font for navbar text */
+    color: #343a40; /* Dark grey text color */
 }
 
 .navbar a {
-    color: #343a40 !important; /* Dark grey text color for links in navbar */
+    color: #343a40; /* Dark grey text color for links in navbar */
 }
 
 .navbar a:hover {
-    color: #e74c3c !important; /* Lighter red on hover */
+    color: #e74c3c; /* Lighter red on hover */
 }
 
+/* Accordion styling */
 .accordion .accordion-item {
-    background-color: #f0f0f0 !important; /* Light grey background for accordion items */
-    color: #343a40 !important; /* Dark grey text color */
-    border: 1px solid #bcbcbc !important; /* Slightly darker border for separation */
-    margin: 0 !important; /* Remove any margins */
+    background-color: black; /* Light grey background for accordion items */
+    color: #343a40; /* Dark grey text color */
+    border: none; /* Slightly darker border for separation */
+    margin: 0; /* Remove any margins */
 }
+
+/* Remove margins and padding around accordion items */
+.accordion .accordion-item, .container {
+    margin: 0 auto;
+    padding: 20;
+}
+
+/* Ensure the accordion body has no gaps */
+.accordion-body {
+    padding: 0;
+    margin: 0;
+}
+
 
 /* Override default accordion header styles */
 .accordion-header {
-    background-color: #b0b0b0 !important; /* Lighter grey background for headers */
-    color: #343a40 !important;
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for accordion headers */
-    font-size: 1.5rem !important;
-    margin: 0 !important; /* Remove any margins */
-    border-bottom: 1px solid #bcbcbc !important; /* Slight border for separation */
+    background-color: #E8E8E8; /* Lighter grey background for headers */
+    color: #343a40;
+    font-family: 'Courier New', serif !important; /* Consistent font for accordion headers */
+    font-size: 1.5rem;
+    margin: 0; /* Remove any margins */
+    border-bottom: 1px solid #bcbcbc; /* Slight border for separation */
 }
 
 /* Ensure the accordion button within the header has the desired background */
 .accordion-header .accordion-button {
-    background-color: #b0b0b0 !important; /* Lighter grey background for buttons */
-    color: #343a40 !important;
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for accordion buttons */
-    font-size: 1.5rem !important;
-    margin: 0 !important; /* Remove any margins */
-    border: none !important; /* Remove border if any */
+    background-color: #E8E8E8; /* Lighter grey background for buttons */
+    color: #343a40;
+    font-family: 'Courier New', serif !important; /* Consistent font for accordion buttons */
+    font-size: 1.5rem;
+    margin: 0; /* Remove any margins */
+    border: none; /* Remove border if any */
 }
 
 /* Remove the default focus outline for the accordion buttons */
 .accordion-header .accordion-button:focus {
-    outline: none !important;
-    box-shadow: none !important;
+    outline: none;
+    box-shadow: none;
 }
 
 /* General container styling */
 .container-md {
-    background-color: #f0f0f0 !important; /* Light grey background for content containers */
-    color: #343a40 !important; /* Dark grey text color */
-    padding: 1rem !important;
-    margin-bottom: 1rem !important;
-    border-radius: 5px !important; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow for depth */
+    background-color: black; /* Light grey background for content containers */
+    color: #343a40; /* Dark grey text color */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Additional text style adjustments */
 blockquote {
-    font-family: 'Libre Baskerville', serif !important; /* Consistent font for blockquotes */
-    font-size: 1.25rem !important;
-    font-style: italic !important;
-    color: #6c757d !important; /* Muted grey for quotes */
-    padding-left: 1rem !important;
-    border-left: 4px solid #e74c3c !important; /* Red border for quotes */
-    margin: 1.5rem 0 !important;
+    font-family: 'Courier New', serif !important; /* Consistent font for blockquotes */
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #6c757d; /* Muted grey for quotes */
+    padding-left: 1rem;
+    border-left: 4px solid #e74c3c; /* Red border for quotes */
+    margin: 1.5rem 0;
 }
+
+.custom-size-small {
+    width: 80px;
+    height: 120px;
+}
+
+.custom-size-big {
+    width: 150px;
+    height: 225px;
+}
+
+.dark-blue {
+    color: #00008B; /* Dark blue color for existing points */
+  }
+  .light-grey {
+    color: #D3D3D3; /* Light grey color for missing points */
+  }
+  
+
