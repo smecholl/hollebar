@@ -148,7 +148,7 @@ def write_index(categorized_cocktails):
         <nav class="navbar">
             <div class="navbar-container">
                 <a class="navbar-brand" href="#">
-                    <img src="assets/heidelberger.png" alt="Brand Logo" width="70" height="70">
+                    <img src="assets/holleH_v2.png" alt="Brand Logo" width="70" height="70">
                 </a>
                 <h1>Hollebar</h1>
                 <div></div> <!-- Placeholder div to ensure centering of h1 -->
@@ -186,7 +186,7 @@ def write_index(categorized_cocktails):
                     <div class="row">
                         <h2>{cocktail['name']}</h2>
                         <div class="col-4 text-end">
-                            <img src="assets/heidelberger.png" alt="Heidelberger" class="img-fluid">
+                            <img src="assets/empty_glass.png" alt="Leeres Glas" class="img-fluid">
                         </div>
                         <div class="col-8">
                             <p>{ingredients}</p>
