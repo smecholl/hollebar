@@ -98,37 +98,74 @@ a:hover {
     text-decoration: underline; /* Underline links on hover */
 }
 
-/* Navbar styling */
-.navbar {
-    background-color: #f6c7adc5; /* Light grey background for navbar */
-    color: #343a40; /* Dark grey text color */
-    height: 150px; /* Vertically extend by about 3 times */
-    justify-content: center;
-    font-family: 'Courier New', serif !important; /* Consistent font for navbar */
-    border-bottom: 1px solid #bcbcbc; /* Slightly darker border for separation */
+.navbar-title h2 {
+    color: #f6c7adc5; /* Change this to your desired color */
 }
 
-.navbar-brand {
+.navbar-nav .nav-link:hover {
+    color: #f6c7adc5; /* Change this to your desired hover color */
+}
+
+.navbar-nav .btn-secondary:hover {
+    background-color: black; /* Change this to your desired hover background color */
+    border-color: black; /* Change this to match the background color */
+}
+
+.navbar-toggler {
+    border-color: #f6c7adc5; /* Change the border color of the button */
+}
+
+.navbar-toggler-icon {
+    background-color: #f6c7adc5;
+}
+
+.navbar-nav .nav-link {
+    color: #f6c7adc5 !important; /* Light grey color */
+}
+
+.navbar-nav .btn-secondary {
+    color: #f6c7adc5 !important; /* Light grey color */
+}
+
+.navbar-title-text {
+    margin: 0;
+    padding-top: 0.5rem;  /* Adjust as needed */
+    padding-bottom: 0.5rem;  /* Adjust as needed */
+    line-height: 1.5;  /* Adjust as needed */
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.custom-toggler-icon {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #f6c7adc5;
+    position: relative;
+}
+
+.custom-toggler-icon::before,
+.custom-toggler-icon::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #f6c7adc5;
     position: absolute;
-    left: 1rem;
-    font-family: 'Courier New', serif !important; /* Consistent font for navbar brand */
-    font-size: 1.5rem;
-    color: #343a40; /* Dark grey text color */
+    left: 0;
+    transition: transform 0.3s ease;
 }
 
-.navbar-text {
-    font-size: 3rem; /* Increased font size for Hollebar */
-    font-family: 'Courier New', serif !important; /* Consistent font for navbar text */
-    color: #343a40; /* Dark grey text color */
+.custom-toggler-icon::before {
+    top: -8px;
 }
 
-.navbar a {
-    color: #343a40; /* Dark grey text color for links in navbar */
+.custom-toggler-icon::after {
+    top: 8px;
 }
 
-.navbar a:hover {
-    color: #e74c3c; /* Lighter red on hover */
-}
 
 /* Accordion styling */
 .accordion .accordion-item {

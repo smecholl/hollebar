@@ -1,11 +1,46 @@
 <!-- navbar.html -->
-<nav class="navbar">
-    <div class="navbar-container">
+<nav class="navbar navbar-expand-lg navbar-light pt-2 pb-2">
+  <div class="container-xxl">
+      <!-- navbar brand / title -->
       <a class="navbar-brand" href="#">
         <img src="/assets/holleH_v2.png" alt="Brand Logo" width="70" height="70">
       </a>
-      <h1>Hollebar</h1>
-      <div></div> <!-- Placeholder div to ensure centering of h1 -->
-    </div>
-  </nav>
-  
+        <span class="navbar-title">
+          <h2 class="navbar-title-text">Hollebar</h2>
+        </span>
+      <!-- toggle button for mobile nav -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="custom-toggler-icon"></span>
+      </button>
+
+      <!-- navbar links -->
+      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+          <ul class="navbar-nav">
+              <li class="nav-item d-lg-none">
+                <a class="nav-link" href="#karte">Karte</a>
+              </li>
+              <li class="nav-item ms-2 d-none d-lg-inline">
+                  <a class="btn btn-secondary" href="#karte">Karte</a>
+              </li>
+              <li class="nav-item d-lg-none">
+                  <a class="nav-link" href="#pricing">Dein Cocktail</a>
+              </li>
+              <li class="nav-item ms-2 d-none d-lg-inline">
+                  <a class="btn btn-secondary" href="#pricing">Dein Cocktail</a>
+              </li>
+              <li class="nav-item d-lg-none">
+                <a class="nav-link" href="#pricing">Cocktail des Tages</a>
+              </li>
+              <li class="nav-item ms-2 d-none d-lg-inline">
+                  <a class="btn btn-secondary" href="#pricing">Cocktail des Tages</a>
+              </li>
+              <li class="nav-item d-lg-none">
+                  <a class="nav-link" href="#pricing">Über uns</a>
+              </li>
+              <li class="nav-item ms-2 d-none d-lg-inline">
+                  <a class="btn btn-secondary" href="#pricing">Über uns</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
