@@ -8,14 +8,13 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Wrapper to center the container and add side images */
+/* Wrapper to center the container and add side images; horizontal scrolling disabled below */
 .wrapper {
     position: relative;
     max-width: 1200px; /* Optional: Set a max-width for your content */
     margin: 0 auto; /* Center the container horizontally */
     padding: 0px; /* Add some padding to your content */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Left and Right side images */
@@ -62,7 +61,7 @@ body {
 /* Headings styling */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Courier New', serif !important; /* Consistent font for headings */
-    color: #212529; /* Dark color for headings */
+    color: #343a40; /* Dark color for headings */
     margin-bottom: 1rem;
 }
 
@@ -88,6 +87,45 @@ p {
     line-height: 1.8;
     margin-bottom: 1.5rem;
 }
+
+
+/* adapt for devices with small screens */
+@media (max-width: 768px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Courier New', serif !important; /* Consistent font for headings */
+        color: #212529; /* Dark color for headings */
+        margin-bottom: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem; /* Large size for main headings */
+        letter-spacing: 0.75px;
+    }
+    
+    h2 {
+        font-size: 1.6rem; /* Slightly smaller for sub-headings */
+        letter-spacing: 0.7px;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Paragraphs styling */
+    p {
+        font-family: 'Courier New', serif !important; /* Consistent font for paragraphs */
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.4rem;
+    }
+
+    .wrapper {
+    	overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+}
+    
+
 
 /* Links styling */
 a {
@@ -235,6 +273,11 @@ blockquote {
     padding-left: 1rem;
     border-left: 4px solid #e74c3c; /* Red border for quotes */
     margin: 1.5rem 0;
+}
+
+.img-fluid.custom-size-big {
+    width: 100%;
+    height: auto;
 }
 
 .custom-size-small {
