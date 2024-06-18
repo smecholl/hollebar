@@ -15,6 +15,7 @@ body {
     margin: 0 auto; /* Center the container horizontally */
     padding: 0px; /* Add some padding to your content */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Left and Right side images */
@@ -50,6 +51,7 @@ body {
     padding: 30px; /* Add some padding to your content */
     color: #343a40; /* Dark grey text for readability */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Specific container margin-top adjustment */
