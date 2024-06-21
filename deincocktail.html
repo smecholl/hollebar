@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Submission Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Placeholder for Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Wrapper for centering content and adding side images -->
+    <div class="wrapper">
+        <div class="container mt-5">
+            <h1>Submit a Cocktail</h1>
+            <form id="cocktail-form" action="https://script.google.com/macros/s/AKfycbwDwdyyYbS6x6hu61klTy6DY_uTRAuVtqNxPcI2IPrtq5QOJ0iHYfvd48K1Af6puflx/exec" method="post">
+                <div>
+                    <label for="name">Cocktail Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="glass">Glass:</label>
+                    <input type="text" id="glass" name="glass">
+                </div>
+                <div>
+                    <label for="alternative_glass">Alternative Glass:</label>
+                    <input type="text" id="alternative_glass" name="alternative_glass">
+                </div>
+                <div>
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category">
+                </div>
+                <div>
+                    <label for="alternative_category">Alternative Category:</label>
+                    <input type="text" id="alternative_category" name="alternative_category">
+                </div>
+                <div>
+                    <label for="ingredients">Ingredients (name:amount):</label>
+                    <textarea id="ingredients" name="ingredients"></textarea>
+                </div>
+                <div>
+                    <label for="popularity">Popularity:</label>
+                    <input type="number" id="popularity" name="popularity">
+                </div>
+                <div>
+                    <label for="sweetness">Sweetness:</label>
+                    <input type="number" id="sweetness" name="sweetness">
+                </div>
+                <div>
+                    <label for="fruitiness">Fruitiness:</label>
+                    <input type="number" id="fruitiness" name="fruitiness">
+                </div>
+                <div>
+                    <label for="sourness">Sourness:</label>
+                    <input type="number" id="sourness" name="sourness">
+                </div>
+                <div>
+                    <label for="alcohol_relative">Alcohol Relative:</label>
+                    <input type="number" id="alcohol_relative" name="alcohol_relative">
+                </div>
+                <div>
+                    <label for="alcohol_absolute">Alcohol Absolute:</label>
+                    <input type="number" id="alcohol_absolute" name="alcohol_absolute">
+                </div>
+                <div>
+                    <label for="bitterness">Bitterness:</label>
+                    <input type="number" id="bitterness" name="bitterness">
+                </div>
+                <div>
+                    <label for="recipe">Recipe:</label>
+                    <textarea id="recipe" name="recipe"></textarea>
+                </div>
+                <div>
+                    <label for="appearance_type">Appearance Type:</label>
+                    <input type="text" id="appearance_type" name="appearance_type">
+                </div>
+                <div>
+                    <label for="short_description">Short Description:</label>
+                    <textarea id="short_description" name="short_description"></textarea>
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div>
+                    <label for="subtitle">Subtitle:</label>
+                    <input type="text" id="subtitle" name="subtitle">
+                </div>
+                <div>
+                    <label for="subtext">Subtext:</label>
+                    <textarea id="subtext" name="subtext"></textarea>
+                </div>
+                <div>
+                    <label for="history">History:</label>
+                    <textarea id="history" name="history"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Navbar JS with relative path -->
+    <script src="../navbar.js"></script>
+</body>
+</html>
