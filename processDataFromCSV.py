@@ -144,22 +144,19 @@ def write_index(categorized_cocktails):
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <title>Hollebar</title>
         <link href="styles.css" rel="stylesheet">
+        <!-- Font Awesome CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     </head>
     <body>
+        <!-- Placeholder for Navbar -->
+        <div id="navbar-placeholder"></div>
 
-        <nav class="navbar">
-            <div class="navbar-container">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/holleH_v2.png" alt="Brand Logo" width="70" height="70">
-                </a>
-                <h1>Hollebar</h1>
-                <div></div> <!-- Placeholder div to ensure centering of h1 -->
-            </div>
-        </nav>
-
+        <!-- Wrapper for centering content and adding side images -->
         <div class="wrapper">
             <div class="accordion" id="accordionExample">
     """
+
+    
 
     # Group cocktails by category
     grouped_cocktails = defaultdict(list)
@@ -221,6 +218,7 @@ def write_index(categorized_cocktails):
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="navbar.js"></script>
     </body>
     </html>
     """
@@ -364,14 +362,14 @@ def create_cocktail(cocktail, output_dir="cocktails"):
                 </div>
             </div>
             
-            <!-- Subtitle Section -->
-            {f"<div class='container mt-5'><h3>{cocktail['subtitle']}</h3></div>" if cocktail['subtitle'] else ""}
+    <!-- Subtitle Section -->
+    {f"<div class='container mt-5'><h2>{cocktail['subtitle']}</h2></div>" if cocktail['subtitle'] else ""}
 
             <!-- Subtext Section -->
             {f"<div class='container mt-5'><p>{cocktail['subtext']}</p></div>" if cocktail['subtext'] else ""}
 
             <!-- History Section -->
-            {f"<div class='container mt-5'><p>{cocktail['history']}</p></div>" if cocktail['history'] else ""}
+            {f"<div class='container mt-5'><h2>Historisches</h2><p>{cocktail['history']}</p></div>" if cocktail['history'] else ""}
         </div>
 
         <!-- Bootstrap JS and Popper.js -->
@@ -387,3 +385,121 @@ def create_cocktail(cocktail, output_dir="cocktails"):
         file.write(html_content)
 
 
+def create_cocktail_of_the_day(categorized_cocktails, output_dir="."):
+    file_path = os.path.join(output_dir, "cocktailoftheday.html")
+    
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cocktail des Tages</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="../styles.css" rel="stylesheet">
+        <!-- Font Awesome CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Placeholder for Navbar -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Wrapper for centering content and adding side images -->
+        <div class="wrapper">
+            <!-- Page Content -->
+    """
+
+    for cocktail in categorized_cocktails.values():
+        if isinstance(cocktail, dict):
+            if cocktail.get('appereance_type') == 'Cocktail des Tages':
+                simplified_name = simplify_string(cocktail['name'])
+                html_content += f"""
+                    <div class="container mt-5">
+                    <h1><a href="/cocktails/{simplified_name}.html">{cocktail['name']}</a></h1>
+                    <h2 class="text-muted">
+                        {cocktail['short_description']}
+                        {f" von {cocktail['author']}" if cocktail['author'] else ""}
+                    </h2>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center">
+                                    <a href="/cocktails/{simplified_name}.html">
+                                        <img src="/cocktails/photos/{simplified_name}.png" alt="{cocktail['name']}" class="img-fluid custom-size-big" onerror="this.onerror=null;this.src='/assets/empty_glass.png';">
+                                    </a>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <ul class="list-unstyled">
+                """
+                for ingredient in cocktail['ingredients']:
+                    if ingredient['amount']:
+                        html_content += f"<li>{ingredient['amount']}</li>\n"
+
+                html_content += """
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <ul class="list-unstyled">
+                """
+                for ingredient in cocktail['ingredients']:
+                    if ingredient['name']:
+                        html_content += f"<li>{ingredient['name']}</li>\n"
+
+                html_content += """
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6 text-end">
+                                    <ul class="list-unstyled">
+                                        <li>Bekanntheit:</li>
+                                        <li>Süße:</li>
+                                        <li>Fruchtigkeit:</li>
+                                        <li>Säure:</li>
+                                        <li>Bitterkeit:</li>
+                                        <li>Stärke:</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                """
+                for attribute in ['popularity', 'sweetness', 'fruitiness', 'sourness', 'bitterness', 'alcohol_relative']:
+                    value = int(cocktail[attribute]) if cocktail[attribute] else 0
+                    html_content += "<li>\n"
+                    for i in range(3):
+                        if i < value:
+                            html_content += '<i class="fas fa-martini-glass-citrus dark-blue"></i>\n'
+                        else:
+                            html_content += '<i class="fas fa-martini-glass light-grey"></i>\n'
+                    html_content += "</li>\n"
+
+                html_content += f"""
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                """
+
+    html_content += """
+        </div>
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Include Navbar JS with relative path -->
+        <script src="../navbar.js"></script>
+    </body>
+    </html>
+    """
+
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(html_content)
+
+
+ 

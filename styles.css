@@ -11,7 +11,7 @@ body {
 /* Wrapper to center the container and add side images; horizontal scrolling disabled below */
 .wrapper {
     position: relative;
-    width: 100%; /* Ensure the wrapper does not exceed the viewport width */
+    max-width: 1200px; /* Optional: Set a max-width for your content */
     margin: 0 auto; /* Center the container horizontally */
     padding: 0px; /* Add some padding to your content */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -89,7 +89,7 @@ p {
 }
 
 
-/* adapt for devices with small screens */
+/* adapt for devices with small screens, before 768 */
 @media (max-width: 768px) {
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Courier New', serif !important; /* Consistent font for headings */
@@ -296,5 +296,26 @@ blockquote {
   .light-grey {
     color: #D3D3D3; /* Light grey color for missing points */
   }
+
+
+#slider .noUi-connect, 
+#sweetness-slider .noUi-connect, 
+#fruitiness-slider .noUi-connect, 
+#sourness-slider .noUi-connect, 
+#alcohol-slider .noUi-connect, 
+#bitterness-slider .noUi-connect {
+    background: #f6c7adc5; /* Change this to your desired color */
+}
+
+.btn-secondary {
+    color: #f6c7adc5 !important; /* Light grey color */
+}
+
+.btn-secondary:hover {
+    background-color: black; /* Change this to your desired hover background color */
+    border-color: black; /* Change this to match the background color */
+    color: #f6c7adc5 !important; /* Light grey color on hover */
+}
+
   
 

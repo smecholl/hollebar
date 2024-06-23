@@ -1,0 +1,173 @@
+﻿# Exported on: 18.06.2024 18:32:52
+Americano|Aperetif|Longdrink|Tumbler||4 cl|Bitterlikör|4 cl|roter Wermut||Soda||||||||||||||||||||||Direkt im Glas, mit Soda aufgießen, kalt rühren, mit Orangenscheibe im Glas|normal|||||
+Aperol Spritz|Aperetif|' Get the current date and time dateTimeStr = Format(Now, "yyyy-mm-dd_hhmmss") ' Set the file path with date and time appended filePath = ThisWorkbook.Path & "\cocktails_" & dateTimeStr & ".csv"|Weinglas||9 cl |Prosecco|6 cl|Bitterlikör|3 cl|Soda||||||||||||||||||||||Eis ins Glas, Zutaten rein, mit Orangenschnitz garnieren|normal|||||
+Black Russian|Shortdrink||Tumbler||6 cl|Wodka|3 cl|Kaffeelikör|||||||||||||||||1|1|0|0|2|||Beide Zutaten auf Eis direkt Tumbler rühren; keine Garnitur|normal|||||
+Bloody Mary|Aperetif|Klassiker|Highballglas||5 cl|Wodka|10 cl|Tomatensaft|1,5 cl|Zitronensaft|3 Spritzer|Tabasco|4 Spritzer|Worcestersauce||Salz||Pfeffer|||||||3|0|2|1|1|||Alle Zutaten zusammen auf Eis ordentlich shaken; in ein Longdrinkglas mit frischem Eis gießen und mit einer Selleriestange garnieren|Cocktail des Tages|||||
+Blue Lagoon|Highballs||Highballglas||4 cl|Wodka|3 cl|Blue Curacao|1,5 cl|Zitronensaft|12 cl|Sprite|||||||||||||2|3|0|1|1|||In ein Highballglas  voller Eis den Wodka, den Zitronensaft und den Blue Curacao geben und gut umrühren; mit der Zitronenlimonade bis obenhin toppen; mit Zitronenrand garnieren|Cocktail des Tages|||||
+Bramble|Sours||Tumbler||4 cl|Gin|2 cl|Zitronensaft|1 cl|Zuckersirup|2 cl|Brombeerlikör|6-8|Brombeeren|||||||||||1|2|3|3|1|||Brombeeren in einem Tumbler mit dem Stößel andrücken; mit Crushed Ice auffüllen; Gin, Zitronensaft und Zuckersirup auf Eis shaken und in den Tumbler abseihen; Mit Brombeerlikör toppen und mit Brombeeren und Zitronenscheibe garnieren|Cocktail des Tages|||||Neben dem Espresso Martini ist der Bramble der wohl bekannteste Drink des britischen Barkeepers Dick Bradsell (1959–2016) und entstand 1984 im Fred’s Club im Londoner Stadtteil Soho. In einem Interview erklärte Bradsell 2011, er sei von einem Singapore Sling ausgegangen und habe seine Version aus Gin, Zitrone, Zucker und Sodawasser – serviert in einem hohen Glas und zum Schluss mit Crème de Mûre (Brombeerlikör) und Bénédictine gefloatet – lediglich vereinfacht in einem kleineren Glas zubereitet und den Bramble damit zu einem „britischen Drink“ mit britischen Zutaten (bis auf die Zitrone) gemacht.
+
+Seinen Siegeszug startete der Drink in England, wo er schon bald auf keiner Karte mehr fehlte, setzte ihn schnell in den USA fort und ist dank des immer noch anhaltenden Gin-Booms auch in immer mehr deutschen Bars zu finden.
+
+2011 nahm die International Bartenders Association (IBA) den Bramble in ihre Liste der offiziellen IBA-Cocktails auf und führt ihn als „all day Cocktail“ in der Rubrik New Era Drinks.
+Brandy Eggnog|Longdrink||Longdrinkglas||6 cl|Brandy|1 cl|Zuckersirup|1|Ei|12 cl|Milch|2 cl|Sahne|2 Spritzer|Angostura|||||||||1|2|0|0|1|||Alle Zutaten werden mit ein paar Eiswürfeln in einem Shaker lange und kräftig geschüttelt und in ein Longdrinkglas  abgegossen|normal|||||
+El Presidente|Shortdrink||Coupette||5 cl|gereifter Rum|5 cl|trockener Wermut|0,5 cl |Triple Sec|1 BL|Grenadine|||||||||||||1|0|0|0|3|||Alle Zutaten in ein Rührglas geben; mit Eis auffüllen; ungefähr eine Minute lang rühren; in ein gefrostetes Glas abseihen; mit der Orangenzeste abspritzen und garnieren|normal|||||
+Daiquiri|Sours||Coupette||6 cl|ungereifter Rum|3 cl|Limettensaft|1,5 cl|Zuckersirup|||||||||||||||1|1|0|3|2||0|Alle Zutaten in einen Shaker geben und auf Eis shaken, ungefähr 15 Sekunden lang; in ein Glas abseihen und mit der Limettenzeste garnieren|normal|||||
+Cuba Libre|Klassiker|Highballs|Highballglas||6 cl|gereifter Rum|12 cl|Cola|3 cl|Limettensaft|||||||||||||||3|2|0|1|1|||Alle Zutaten auf Eis in ein Highball-Glas gießen, die Cola zuletzt; mit einem Limettenschitz garnieren|normal|||||
+Cosmopolitan|Sours||Martiniglas||4 cl|Wodka|1 cl|Triple Sec|2 cl|Limettensaft|2 cl|Cranberrysaft|||||||||||||2|2|1|2|2|||Alle Zutaten für etwa 15 Sekunden auf Eis shaken; in ein Martiniglas abseihen|normal|||||
+Caipirinha|Klassiker|Highballs|Caipirinaglas||6 cl|Cachaca|1|Limette|1 TL|weißer Rohrzucker|||||||||||||||3|2|1|1|3|||Im Shaker die Limetten und den Zucker mit einem Stößel anpressen, bis sich der Zucker aufgelöst hat; Cachaça und Eiswürfel dazugießen und kräftig shaken; mit den Eiswürfeln ins Glas gießen|normal|||||
+Gin Fizz|Fizz und Collins||Highballglas||6 cl|Gin|2 cl|Zuckersirup|2 cl|Zitronensaft||Soda|||||||||||||1|1|0|1|2|||Alle Zutaten außer der Soda auf Eis shaken; in einem Highball-Glas auf Eis abseihen; mit einem Spritzer Soda toppen und mit einer Zitronenzeste garnieren|normal|||||
+Gin Tonic|Klassiker|Highballs|Highballglas||6 cl|Gin|18 cl|Tonic Water|||||||||||||||||3|1|0|1|1|||Eiswürfel ins Highballglas geben; Gin eingießen; mit Tonic Water aufgießen; mit Zitronenzeste, Gurke oder passenden Kräutern garnieren|normal|||||
+Ginger 43|||Weinglas||5 cl|Likör 43|20 cl |Ginger Ale||Limette|||||||||||||||1|1|1|2|1|||Im Glas bauen, Saft einer halben Limette ins Glas, mit Limettenscheibe und Zeste garnieren|normal|||||
+Golden Dream|Shortdrink||Martiniglas||3 cl|Galliano Vanilla|3 cl|Triple Sec|3 cl|Orangensaft|3 cl|Sahne|||||||||||||1|2|2|0|1|||Alle Zutaten mit ein paar Eiswürfeln in einen Shaker geben und kräftig schütteln|normal|||||
+Harvey Wallbanger|Longdrink|Highballs|Highballglas||4,5 cl|Wodka|1,5 cl|Galliano Vanilla|9 cl|Orangensaft|||||||||||||||1|3|3|0|2|||In ein Highballglas voller Eis zunächst den den Wodka, dann den Orangensaft geben; ganz kurz umrühren und mit einer Scheibe Orange servieren; mit dem Galliano toppen|normal|||||
+Irish Coffee|||||2 TL|Zucker|12 cl|Kaffee|4 cl|Whisky||Sahne|||||||||||||2|1|0|0|2|||Whiskey und Kaffee auf den Zucker in eine Tasse oder ein Glas gießen; kurz umrühren und mit der Sahne toppen|normal|||||
+Tom Collins|Fizz und Collins|Highballs|Highballglas||6 cl|Gin|3 cl|Zitronensaft|1,5 cl|Zuckersirup|10 cl|Soda|||||||||||||1|2|2|1|1|||Gin, Zitronensaft und Zuckersirup ins Glas geben und verrühren; mit Eis auffüllen und mit Soda toppen; mit Zitronenscheibe garnieren|normal|||||
+Wildberry Lillet|Aperetif||Weinglas||5 cl|Lillet|10 cl|Schweppes Wild Berry|2|Himbeeren|1|Erdbeeren|||||||||||||3|3|3|0|1|||Lillet Blanc in ein Weinglas geben, mit Eiswürfeln auffüllen und mit Schweppes Original Wild Berry aufgießen; geviertelte Erdbeere und Himbeeren dazugeben und vorsichtig umrühren|normal|||||
+Long Island Iced Tea|Klassiker|Highballs|Highballglas||2 cl|ungereifter Rum|2 cl|Wodka|2 cl|Gin|2 cl |Tequila|2 cl|Triple Sec|1,5 cl|Limettensaft||Cola|||||||3|1|1|1|3|||Alle Zutaten außer der Cola in ein Highball-Glas voller Eis schütten und umrühren; mit Cola auffüllen und mit einer Limettenscheibe garnieren|normal|||||
+Martini Dry|Shortdrink||Martiniglas||6 cl|Gin|1 cl |trockener Wermut|1|Olive|1|Zitrone|||||||||||||2|0|0|1|2|||Eiswürfel in ein Rührglas geben, Gin und Wermut dazugeben. Anschließend mit einem Barlöffel den Martini Dry gut umrühren. Das Ganze in ein gut gekühltes Martini-Glas füllen und mit Zitrone abspritzen|normal|||||
+Mojito|Klassiker||Longdrinkglas||6 cl|ungereifter Rum|1 TL|weißer Rohrzucker|1|Limette||Minze||Soda|||||||||||3|2|1|1|2|||Der Mojito wird direkt im Longdrinkglas zubereitet. Zucker, etwas Sodawasser, Minze und die zuvor geviertelte Limette in das Glas geben; anschließend alles mit einem Stößel zerdrücken; nun etwas crushed ice und den kubanischen Rum hinzugeben, mit Sodawasser auffüllen und kurz umrühren|normal|||||
+Negroni|Aperetif||Tumbler||3 cl|Gin|3 cl|Bitterlikör|3 cl|roter Wermut||Orange|||||||||||||2|2|1|1|3|||Alle Zutaten in ein mit Eiswürfeln gefüllten Tumbler füllen und vorsichtig umrühren; mit einer halben Orangenscheibe garnieren|normal|||||
+Nocello Cream|||Martiniglas||2 cl|Nocello|2 cl|Kaffeelikör|2 cl|Whisky|2 cl|Sahne|evtl|Schokoflocken|||||||||||1|2|1|0|2|||Der Nocello Cream wird mit Eiswürfeln im Shaker zubereitet; dazu einfach alle Zutaten hineingeben und kräftig schütteln; anschließend in ein Cocktailglas abgießen und den Nocello Cream Cocktail genießen|normal|||||
+Old Fashioned|Shortdrink||Tumbler||6 cl|Whisky|0,5 cl |Zuckersirup|3 Spritzer|Angostura Bitter||Orange|||||||||||||2|0|0|0|3|||Ein Rührglas mit Eis füllen; Whisky, Sirup und Angostura Bitters eingießen und etwa 1 Minute umrühren; in einen Tumbler mit frischem Eis abseihen; mit einer Orangenzeste abspritzen und garnieren.|normal|||||
+Pep it|Longdrink||Longdrinkglas||4 cl|Whiskylikör|1,5 cl |Zitronensaft|3 Tropfen|Tabasco|15 cl |Bitter Lemon||Gurke|||||||||||1|0|1|2|1|||Einige Eiswürfel ins Glas geben und den Southern Comfort, den Zitronensaft und den Tabasco hinzufügen; anschließend mit Bitter Lemon auffüllen und umrühren.|normal|||||
+Pina Colada|Tiki||Hurricaneglas||6 cl|ungereifter Rum|2 BL|Cream of Coconut|10 cl|Ananassaft|1,5 cl |Limettensaft|2 cl|Sahne|||||||||||3|3|3|0|2|||Alle Zutaten zusammen in den Shaker geben, die Sahne als allerletztes; Shaker mit Crushed Ice auffüllen, kräftig shaken; in Glas füllen, mit Crushed Ice auffüllen.|normal|||||
+Planters Punch|Tiki|Punches|Quatschglas||4,5 cl|Jamaica-Rum|3,5 cl|Orangensaft|3,5 cl|Ananassaft|2 cl|Zitronensaft|3 Dashes|Angostura Bitter|1 cl|Grenadine|1 cl|Zuckersirup|||||||1|2|3|1|1|||Alles auf Eis im Cocktailshaker durchschütteln und in einen Tiki-Becher mit frischen Eiswürfeln abseihen; mit Minze, Orange, Kirschen und/oder Ananas dekorieren|normal|||||
+Raspberry Basil Collins|Fizz und Collins||Longdrinkglas||5 cl|ungereifter Rum|2 cl|Limettensaft|2 cl|Honigwasser|6|Basilikum|6|Himbeeren||Soda|||||||||1|2|2|2|1||| Himbeeren und das Basilikum in einen Shaker geben und leicht mit einem Stößel zerquetschen; dann einige Eiswürfel hinzugeben und dann die weiteren Zutaten bis auf das Mineralwasser hinzufügen und kräftig schütteln; anschließend durch ein Barsieb in ein mit Eiswürfeln gefülltes Longdrinkglas abgießen und mit Mineralwasser auffüllen|normal|||||
+Manhattan|Shortdrink|Klassiker|Coupette||6 cl|Whisky|3 cl|roter Wermut|2 Spritzer|Angostura Bitter|||||||||||||||3|2|0|0|3|||Alle Zutaten zusammen auf Eis rühren und in eine Coupette abseihen|normal|||||
+Sazerac|Shortdrink||Tumbler||6 cl|Whisky|1|Würfelzucker|0,25 cl|Absinth|3 Dashes|Peychaud's Bitters|||||||||||||1|1|0|0|3|||Würfelzucker oder Zuckersirup in ein  ein Rührglas geben; Bitters ins Glas träufeln und Zuckerwürfel falls vorhanden mit dem Barlöffel zerdrücken; Eiswürfel und Whiskey dazugeben und etwa 45 Sekunden rühre; die Innenseite eines zweiten, vorgekühlten Glases mit ein paar Tropfen Absinth  benetzen; Drink in das Glas abseihen (ohne Eis); mit einer Zitronenzeste abspritzen und nach Wunsch dazugeben|normal|||||
+Scarlett O'Hara|Shortdrink||Tumbler||4 cl|Whiskylikör|3 cl|Cranberrysaft|2 cl|Limettensaft|||||||||||||||1|2|2|1|2|||Alle Zutaten mit einigen Eiswürfeln im Shaker kräftig schütteln; den Cocktail in das Glas abseihen und servieren.|normal|||||
+Sex on the Beach|Klassiker|Punches|Hurricaneglas||4 cl|Wodka|4 cl|Pfirsichlikör|4 cl|Orangensaft|4 cl |Cranberrysaft|2 cl|Zitronensaft|||||||||||3|3|3|2|1|||Alle Zutaten auf Eiswürfeln kräftig shaken; in ein Hurricaneglas voller Crushed Ice abseihen; mit einer Zitronenscheibe und einer Cocktail-Kirsche garnieren|normal|||||
+Sidecar|Sours||Martiniglas||6 cl|Cognac|3 cl|Triple Sec|3 cl |Zitronensaft|||||||||||||||1|0|0|3|3|||Alles zusammen auf Eis shaken; in ein vorgekühltes Martiniglas abseihen; mit einer Orangenzeste garnieren|normal|||||
+Solero|Longdrink||Longdrinkglas||2 cl|Wodka|1 cl|Vanillesirup|1 cl|Zitronensaft|3 cl|Orangensaft|5 cl|Maracujasaft|Optional|Sahne|||||||||1|2|3|1|1|||Alle Zutaten miteinander vermengen (wenn vorhanden im Elektromixer) und anschließend in ein mit Eiswürfeln gefülltes Longdrinkglas abgießen|normal|||||
+Tequila Sunrise|Punches||Hurricaneglas||6 cl |Tequila|1,5 cl|Triple Sec|7,5 cl|Orangensaft|2 cl |Limettensaft|1 cl|Grenadine|||||||||||3|3|2|1|2|||Grenadine in ein Glas voll mit Eis geben; restliche Zutaten auf Eis shaken und abseihen, dabei die Schichtung beibehalten; Bei Bedarf kurz umrühren; mit Orangenscheibe und Kirsche garnieren|normal|||||
+Tropicana|Fruchtig|Longdrink|Hurricaneglas||6 cl|Cachaca|1 cl|Creme de Bananes|1 cl|Kokossirup|1 cl|Blue Curacao|6 cl|Orangensaft|6 cl|Maracujasaft|||||||||1|3|2|0|1|||Alles außer Blue Curacao shaken und abseihen auf ein mit Eis gefülltes Glas; Blue Curacao hinzufügen und Schichtung beibehalten; mit Orangenscheibe garnieren|normal|||||
+White Lady|Sours||Coupette||6 cl |Gin|2 cl|Triple Sec|1 cl|Zuckersirup|3 cl|Zitronensaft|2 Spritzer|Angostura Bitter|1|Eiweiß|||||||||2|2|0|3|3|||Dry Shake; anschließend mit Eis shaken und abseihen; mit Zitronenzeste abspritzen und garnieren|normal|||||
+White Russian|Espressos|Shortdrink|Tumbler||6 cl|Wodka|3 cl|Kaffeelikör|3 cl|Sahne|||||||||||||||2|1|0|0|2|||Sahne leicht anschlagen, sodass sie gerade noch flüssig ist; Tumbler mit Eiswürfeln füllen; Wodka und Kaffeelikör einfüllen und kurz umrühren; mit Sahne toppen und noch einmal kurz umrühren, sodass die Schichtung erhalten bleibt|normal||||Der White Russian ist das Lieblingsgetränk der Hauptfigur des von den Coen-Brüdern gedrehten Spielfilms The Big Lebowski von 1998. Dort verwendet „The Dude“ allerdings statt angeschlagener Sahne Half & Half. Dabei handelt es sich um ein in den Vereinigten Staaten angebotenes Fertigprodukt, dessen Fettgehalt von etwa 12,5 % zwischen Sahne und Milch angesiedelt ist. Außerdem die Schwester des Black Russian. Dieser entspricht in der Zubereitung dem White Russian, jedoch ohne Sahne.  |
+Swimming Pool|Tiki|Longdrink|Hurricaneglas||2 cl|Wodka|2 cl|ungereifter Rum|1 cl|Blue Curacao|2 cl|Cream of Coconut|2 cl|Sahne|||||||||||3|3|3|0|1|||Alles außer Blue Curacao shaken und abseihen auf ein mit Eis gefülltes Glas; Blue Curacao hinzufügen, dabei nicht auf Schichtung achten; mit Ananas garnieren|normal|||||
+Whisky Soda|Highballs||Longdrinkglas||6 cl|Whisky|12 cl|Soda|||||||||||||||||2|0|0|0|1|||Whisky in ein gerne vorgekühltes Glas geben; kleine Eiswürfel rein und rühren; einen großen Eiswürfel dazu; Soda dazugeben und kurz rühren|normal|Eine Schandtat.||||
+Clover Club|Fruchtig|Sours|Coupette||6 cl|Gin|3 cl|Zitronensaft|2 cl|Himbeersirup|3|Himbeeren|1|Eiweiß|||||||||||1|1|2|3|2|||Himbeeren mit Barlöffel oder Stößel andrücken und mit Eis und allen weiteren Zutaten shaken; ohne Eis ein zweiter dry shake; in gerne vorgekühlte Coupette abseihen; mit frischen Himbeeren garnieren|normal|||||
+Amaretto Sour|Sours||Tumbler||4,5 cl|Amaretto|2 cl |Whisky|3 cl|Zitronensaft|1 BL|Zuckersirup|0,5|Eiweiß|||||||||||1|1|0|3|2|||Erst ohne, anschließend mit Eis shaken; abseihen; mit Zitronenzeste und Cocktailkirsche garnieren|normal|||||
+Hurricane|Tiki|Longdrink|Hurricaneglas||5 cl|ungereifter Rum|5 cl|gereifter Rum|3 cl|Limettensaft|3 cl|Orangensaft|1,5 cl|Zuckersirup|2 cl|Maracujasaft|1 BL|Grenadine|||||||2|3|2|1|3|||Grenadine in ein Glas voll mit Eis geben; restliche Zutaten auf Eis shaken und abseihen, dabei die Schichtung größtenteils beibehalten; mit Crushed Ice überhäufen; mit Orangenscheibe und Kirsche  oder was auch immer da ist garnieren|normal|stramm.||||
+Mexikaner|Shooter||Shotglas||10 cl|Korn|10 cl|Sangrita|20 cl|Tomatensaft||Salz||Pfeffer||Tabasco|||||||||2|0|3|0|2|||Zutaten verrühren und in eine saubere Flasche geben; im Kühlschrank kalt stellen; in Shotgläsern servieren|normal|||||
+Bumble Coffee (Abwandlung)|Espressos|Longdrink|Longdrinkglas||4 cl|Wodka|3 cl|Espresso|9 cl|Orangensaft|||||||||||||||1|2|2|0|1|||Wodka und Orangensaft shaken, mit Eiswürfeln ins Glas geben; Espresso obenauf schichten|normal|Die Abendvariante des Frühstückcocktails|Eric|||Für den Mix aus Orangensaft und Espresso hat sich der Name “Bumble Coffee” durchgesetzt. “Bumble” bedeutet im Deutschen “summen” und erinnert an das englische Wort “bumblebee”, was auf Deutsch wiederum “Hummel” bedeutet. Ein passender Name für einen gelb-schwarzen, sommerlichen Frühstücksdrink! Nun ja, so wird er zu einem Frühstück nebst einem Croissant gereicht. Zu späterer Stunde zeigt er sich gepaart mit Wodka von einer neuen Seite. 
+Espresso Martini|Espressos|Shortdrink|Martiniglas|Coupette|4 cl|Wodka|4 cl|Kaffeelikör|4 cl|Espresso|||||||||||||||2|1|0|0|2||0|Auf Eis shaken (richtig kräftig für eine schöne Krone); abseihen auf eine gerne vorgekühltes Glas|normal|Das neue Kultgetränk||||Der Espresso Martini hat seine Wurzeln in den 80er Jahren und wurde von Barkeeper Dick Bradsell erfunden. Die Inspiration kam von einem berühmten Model, das sich einen Drink wünschte, der – frei übersetzt – “wach und blöd” macht. Eine unkomplizierte Anforderung, die zur Geburt eines ebenso unkomplizierten, aber genialen Cocktails führte.
+Berry 51|Fruchtig|Shortdrink|Tumbler||3 cl|Cachaca|3 cl|Brombeerlikör|3 cl|Weißwein|3|Brombeeren|3|Himbeeren|||||||||||1|2|3|0|1|||Hälfte der Beeren zerstoßen und mit Eis in den Tumbler geben; Rest shaken und abseihen|normal|||||Berry 51 ist ein perfekter Sommer-Cocktail! Wer den herrlich fruchtigen Cocktail erfunden hat, lässt sich schwer nachvollziehen. Tatsache ist aber, dass der Cocktail auf Basis von Cachaca, Brombeerlikör und Weißwein nicht nur für das Auge ein Highlight darstellt, sondern auch höchsten Trinkgenuss bereitet. Der Name Berry 51 ist auf den Cachaca 51 und die zum Rezept gehörenden Beeren zurückzuführen. Die frischen Brombeeren und Himbeeren, die dem erquickenden Cocktail zugefügt werden, harmonieren perfekt. Auch wenn der Berry 51 keine große Geschichte nachweisen kann, könnte er sich zum neuen Sommer-In-Getränk entwickeln und bietet eine wunderbare Cocktail-Alternative für alle Hugo oder Aperol-Spitz Liebhaber.
+Grashopper|Aperetif||Martiniglas||3 cl|Creme de Cacao weiß|3 cl|Pfefferminzlikör|3 cl|Sahne|||||||||||||||1|3|1|0|1|||Alles shaken; in ein gerne gekühltes Glas ohne Eis abseihen|normal|||||
+Chamble|Sours||Tumbler||4 cl|Gin|2 cl|Zitronensaft|1 cl|Zuckersirup|2 cl|Kirschlikör|6-8|Kirschen|||||||||||0|2|3|2|1|||Kirschen in einem Tumbler mit dem Stößel andrücken; mit Crushed Ice auffüllen; Gin, Zitronensaft und Zuckersirup auf Eis shaken und in den Tumbler abseihen; Mit Kirschlikör toppen und mit Kirschen und Zitronenscheibe garnieren|normal|eine Abwandlung des Brambles|Eric|||
+Singapore Sling|Punches|Longdrink|Longdrinkglas||3 cl|Gin|1,5 cl|Kirschlikör|1,5 BL|Triple Sec|1,5 BL|Kräuterlikör|1 cl|Grenadine|1,5 cl|Limettensaft|1 Spritzer|Angostura Bitter|12 cl|Ananassaft|||||1|3|3|1|1||0|Auf Eis shaken; in ein mit Eiswürfeln gefülltes Glas abseihen. |normal|||||Die Bezeichnung Singapore Sling verwendet erstmals Harry Craddock in seinem einflussreichen Savoy Cocktail Book aus dem Jahr 1930. Er besteht aus Gin, Cherry Brandy und Zitronensaft und wird mit Sodawasser aufgefüllt. Direkt darunter folgt das Rezept eines Straits Sling für sechs Personen, der die gleichen Zutaten enthält, jedoch zusätzlich mit Bénédictine und Cocktailbitter verfeinert wird.
+
+Die Rezeptur des heute im Raffles Hotel servierten, fruchtigen Singapore Sling mit Ananassaft, Grenadine und Orangenlikör wurde erst um 1936 notiert – zu einer Zeit, als in den Restaurants von Trader Vic und Don the Beachcomber Tiki-Cocktails mit Rum und Säften in Mode kamen.
+Straits Sling|Longdrink||Hurricaneglas|Longdrinkglas|6 cl|Gin|1,5 cl|Kirschlikör|1,5 cl|Kräuterlikör|2 Spritzer|Angostura Bitter|2 Spritzer|Orange Bitter|3 cl|Zitronensaft||Soda|||||||1|0|0|1|2||2|Alles bis auf Soda auf Eis shaken; auf ein mit Eis gefülltes Glas abseiehn; mit Soda toppen; mit Strohhalm und Orangenscheibe und Cocktailkirsche garnieren. Eine andere seriöse Quelle empfiehlt Kirschwasser statt Kirschlikör. |normal|Der Vorläufer des Singapore Sling||Ein Balett von Gin und Kräuterlikör|Herzstück des Drinks ist die Kombination aus Gin und dem Kräuterlikör D.O.M. Bénédictine. Letzterer ist, abgesehen von den wenigen Dashes Orange und Angostora Bitters, auch die einzige Süßequelle in dem Drink. Das verdeutlicht, wohin die Reise aromatisch geht: Der Straits Sling ist kein Drink für Leute, die am liebsten den Restlöffel Honig ablecken, mit dem sie ihren Ingwertee verrührt haben.
+
+Man ist beim Blick auf die Rezeptur sogar versucht zu sagen: Eigentlich müsste da doch noch etwas Süßes rein. Muss es aber nicht. Der herbal-bittersüße Doppelpunch des mit 48% Vol. sehr kräftigen, französischen Klosterelixiers bildet ein ausreichend stabiles Rückgrat des Drinks. Um diesem herum tanzen Gin und Kirschwasser ihr knackiges Ballet, unterstützt von der Frische der Zitrone.|Der Straits Sling ist der direkte Vorfahre des Singapore Sling, quasi die erwachsene Version davon. Gut, ist auch nicht schwierig. Die Rezepte für seinen Nachfahren lesen sich meist so, als hätte jemand sich an Omas Hausbar bedient, weil auf der 80er-Jahre-Party der Schnaps ausgegangen ist. Tatsächlich muss man für die Story dieser süßen Verführung aber viel weiter zurückgehen in der Cocktail-Geschichte: Noch bevor das Wort “Cocktail” überhaupt so richtig bekannt war, noch vor die Zeit des ehrwürdigen Old Fashioned. Damals, Anfang des 18. Jahrhunderts war ein Sling ein Drink aus Spirituose, Wasser, Zucker und Muskatnuss – fügte man Bitters hinzu, war’s ein Bittered Sling. Und ließ man im Bittered Sling die Muskatnuss weg, war’s ein Cocktail.
+
+Springen wir 100 Jahre nach vorn und tatsächlich nach Singapur: Irgendwann zwischen 1899 und 1915 erfindet der chinesische Bartender Ngiam Tong Boon einen Drink namens Straits Sling in der Bar des Raffles Hotels. Schon der hat nicht das geringste mit klassischen Slings zu tun - im Nachhinein ist das aber das geringste Problem. Die Kontroverse darum, ob der Straits Sling wirklich der Urvater des Singapore Sling ist und ob beide wirklich auf Boon zurückzuführen sind, ist enorm. Cocktail-Historiker schätzen die Wahrscheinlichkeit aufgrund von Zeitungsberichten aus dieser Zeit als hoch ein, Zweifel bleiben. Woran keine Zweifel bleiben: Das Original ist ein wahnsinnig guter Drink, den ihr euch als Fan klassischer Cocktails nicht entgehen lassen solltet. Als Freund von Singapore Slings aber vielleicht schon.
+Pornstar Martini|Shortdrink|Aperetif|Martiniglas||4 cl|Wodka|4 cl|Passionsfruchtlikör|4 cl|Prosecco|2 cl|Limettensaft|1 cl|Vanillesirup||Passionsfrucht|||||||||2|2|2|1|1||0|Zwei Passionsfrüchte waschen und aufschneiden; die Kerne entfernen und drei Hälften in den Shaker geben; die restlichen Zutaten bis auf den Champagner ebenfalls hinzugeben und zusammen mit einigen Eiswürfeln kräftig schütteln; durch ein Barsieb in das zuvor gekühlte Cocktailglas abgießen; erst dann den Champagner dem Porn-Star-Martini zufügen; Die übrig gebliebene Hälfte der Passionsfrucht mit zum Porn Star Martini ins Glas geben.|normal|||Ist es ein Martini?|Nein. Der Pornstar Martini ist im eigentlichen Sinne kein Martini, da er deutlich zu viel abweichende Zutaten enthält. Der klassische Martini ist ein puristischer Drink, der mit Gin oder Vodka und meist trockenem Vermouth gemixt wird.|Der Pornstar Martini wurde Anfang der 2000er-Jahre von der Mixing-Legende Douglas Ankrah in der Townhouse Bar in London entwickelt. Ursprünglich war der Drink unter dem Namen Maverick Martini bekannt. Mit der Umbenennung in Pornstar Martini wurde der Cocktail dann richtig populär. Zur Erklärung für den Namen existieren zwei Versionen:
+Douglas Ankrah nannte den Pornstar Martini so weil es ein Drink ist, der von einem Pornostar bestellt werden würde.
+Der Pornstar Martini wurde so genannt, weil Douglas Ankrah von einem Besuch im Stripclub Mavericks Gentlemen’s Club in Kapstadt zu diesem Drink inspiriert wurde.
+Welche oder ob überhaupt eine dieser Versionen stimmt bleibt wohl ungeklärt. Douglas Ankrah kann zur Auflösung jedenfalls nichts mehr beitragen, er verstarb unterwartet im Jahr 2021.
+Aperol Paloma|Aperetif||Weinglas||5 cl|Tequila|3 cl|Bitterlikör|5 cl|Triple Sec|5 cl|Grapefruitsaft|1,5 cl|Limettensaft|||||||||||1|2|1|1|2||1|Auf Eis shaken; abseihen; mit Grapefruit- und / oder Limettenscheibe garnieren; optional Zuckerrand|normal||||Die Neuauflage des Aperol Spritz. Aber ein bisschen strammer. |
+Queens's Park Swizzle|Highballs|Tiki|Longdrinkglas||6 cl|gereifter Rum|2 Spritzer|Angostura Bitter|3 cl|Limettensaft|1,5 cl |Zuckersirup|10 Blätter|Minze|||||||||||1|2|2|1|3||0|Minze und Zuckersirup sanft mit Stößel im Glas andrücken; restliche Zutaten mit Crushed Ice ins Glas geben und swizzlen; ggf. noch mehr Crushed Ice drauf; mit einem Zweig Minze garnieren; einige toppen den Drink mit Soda|normal|||Warum ein Swizzle?|Ein Swizzle ist eine sehr spezielle Variante eines Highballs: Der Drink wird in einem hohen Glas gebaut, aber auf Crushed Ice statt auf Eiswürfeln. In dieses Crushed Ice steckt man einen Swizzle Stick, eine Mischung aus Schneebesen und diesem kleinen Rechen für den Zengarten auf Omas Schreibtisch. Den Stick steckt man ins Crushed Ice und reibt ihn schnell zwischen den Händen hin und her, als würde man im Survivalmodus ein Lagerfeuer mit zwei Stöckchen anzünden wollen. Dadurch passiert etwas Ähnliches, als würdet ihr den Drink rühren, nur extremer. Cocktail inklusive Glas werden extrem kalt und der Schmelzwasserpegel steigt auf ein Level, für das ihr den Drink sonst shaken müsstest. Eine spannende Zubereitungsart mit ganz eigenem Charme, von dem vor allem Drinks mit kräftigen Rum-Noten profitieren.|Einen solchen Swizzle entwickelt man irgendwann vor 1920 im Queen’s Park Hotel, das 1895 in Port of Spain eröffnetwurde, der Hauptstadt von Trinidad und Tobago. Kennt man den Zwei-Insel-Staat heute selbst für guten Rum, war das damals noch anderes, weswegen die Bartender auf Demerara Rum zurückgriffen, so nennt man den Rum aus dem nahen Guyana. Trader Vic, der Erfinder des Mai Tai und einer der Urväter der Tiki-Bewegung nennt den Queen’s Park Swizzle 1946 “Die schönste Form der Anästhesie, die es heute gibt”. Das Hotel gibt es heute nicht mehr. Anders als etwa beim Royal Hawaiian Mai Tai oder beim Singapore Sling hat sich hier also nie eine Cocktail-Pilgerstätte etabliert, in der enttäuschte Connaisseurs verwaschene Touri-Varianten ihrer Lieblingsdrinks vorgesetzt bekommen. Schade um das Hotel – aber gar nicht mal so schlecht für diesen schlichten Geniestreich.
+Zombie|Tiki|Punches|Tiki-Becher|Hurricaneglas|6 cl|gereifter Rum|3 cl|Overproof Rum|1,5 cl|Falernum|1 Spritzer|Angostura Bitter|1 cl|Grapefruitsaft|6 Tropfen|Pernod|1 BL|Grenadine||||||||3|2|1|3||0|Alles auf Eis shaken; in ein Glas mit Crushed Ice gefüllt abseihen; mit Minze dekorieren; statt Pernod gerne Absinth verwenden; optional 0,5 cl Zimtsirup hinzufügen||||||Das  Original-Rezept für den Zombie wurde von seinem Erfinder Don the Beachcomber jahrezehntelang geheimgehalten hatte. Der Mann war schließlich gleichzeitig der Erfinder der Tiki-Bar an sich und im ständigen Wettstreit mit seinem Erzrivalen Trader Vic, dessen Restaurantkette Trader Vics  sogar bis heute existiert – im Gegensatz zu der von Don. Dieser Kleinkrieg zeigte sich vor allem bei den Drinks der beiden legendären Kontrahenten; spätestens als Don die Rechte für den wichtigsten davon – den Mai Tai – an Vic verlor (er vermutete, Vic hätte dreist seinen Q.B. Cooler kopiert), wurde er geradezu paranoid, was seine Rezepte anging.
+
+So waren die Zutaten in seinen Restaurants teilweise nur mit Nummern versehen. Seine Bartender lernten lediglich wie viel von welcher Nummer in welchen Drink gehörte – was in den jeweiligen Flaschen war, konnten sie bestenfalls erraten. Diese Geheimnistuerei sorgte schlussendlich dafür, dass jahrzehntelang jeder, der außerhalb von Trader Vics Bars einen Zombie anbieten wollte, seine eigene Variante mixen musste/durfte/konnte. Wobei wir ehrlich gesagt nicht glauben, dass die Großraumdiskos unser Jugend den Zombie-Cocktail nach dem Rezept oben gemixt hätten, wenn Sie’s gekannt hätten. “Ja, Grenadine ham wir da … und Bacardi. Das kann ich dir schon zusammenmixen, kommt auf’s Gleiche raus.” Glücklicherweise kennt man das Original inzwischen und es kann in exquisuiten Bars wie der Hollebar bestellt werden. 
+Tequila Sunrise (1920er Jahre)||||||||||||||||||||||||||||||||||||||
+Painkiller||||||||||||||||||||||||||||||||||||||
+Treacle||||||||||||||||||||||||||||||||||||||
+Old Fashioned mit Apfelsaftflow||||||||||||||||||||||||||||||||||||||
+Tokio Tea||||||||||||||||||||||||||||||||||||||
+Whiskey Julep||||||||||||||||||||||||||||||||||||||
+Sangria||||||||||||||||||||||||||||||||||||||
+=====
+Wodka|1
+Gin|1
+Brandy|0
+Angostura Bitter|1
+Cachaca|1
+Absolut Wodka Zitrone|1
+gereifter Rum|0
+ungereifter Rum|1
+Tequila|1
+Cognac|1
+Korn|1
+Triple Sec|1
+Jamaica-Rum|0
+Peychaud's Bitters|0
+Absinth|1
+Whisky|1
+Overproof Rum|0
+Orange Bitter|0
+Pernod|1
+Bitterlikör|1
+Prosecco|1
+Kaffeelikör|1
+Blue Curacao|1
+Likör 43|1
+Galliano Vanilla|0
+Lillet|1
+Nocello|1
+Creme de Cacao weiß|1
+Whiskylikör|1
+Pfirsichlikör|1
+Creme de Bananes|0
+Amaretto|1
+Brombeerlikör|1
+roter Wermut|1
+trockener Wermut|1
+Weißwein|1
+Pfefferminzlikör|0
+Kirschlikör|1
+Kräuterlikör|0
+Passionsfruchtlikör|1
+Falernum|0
+Orangensaft|1
+Cranberrysaft|1
+Tomatensaft|1
+Grapefruitsaft|1
+Ananassaft|1
+Preiselbeersaft|0
+Maracujasaft|1
+Limettensaft|1
+Zitronensaft|1
+Soda|1
+Sprite|1
+Milch|1
+Cola|1
+Espresso|1
+Tonic Water|0
+Ginger Ale|1
+Schweppes Wild Berry|0
+Bitter Lemon|0
+Kaffee|1
+Orange|1
+Gurke|0
+Brombeeren|0
+Olive|0
+Minze|0
+Basilikum|0
+Ananas|0
+Erdbeeren|0
+Cocktailkirschen|0
+Himbeeren|1
+Kirschen|0
+Zuckersirup|1
+Vanillesirup|1
+Kokossirup|1
+Himbeersirup|1
+Ahornsirup|1
+Grenadine|1
+Tabasco|1
+Worcestersauce|1
+Pfeffer|1
+Salz|1
+Sahne|1
+weißer Rohrzucker|1
+Schokoflocken|1
+Kokosnusscreme|1
+Honig|1
+Zucker|1
+Sangrita|1
+Cream of Coconut|1
+Würfelzucker|1
+Honigwasser|1
+Eiweiß|1

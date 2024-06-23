@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein eigener Cocktail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Placeholder for Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Wrapper for centering content and adding side images -->
+    <div class="wrapper">
+        <div class="container mt-5">
+            <h1>Hast du etwa einen Cocktail für die Hollebar?</h1>
+            <form id="cocktail-form" action="https://script.google.com/macros/s/AKfycbwDwdyyYbS6x6hu61klTy6DY_uTRAuVtqNxPcI2IPrtq5QOJ0iHYfvd48K1Af6puflx/exec" method="post">
+                <!-- General Section -->
+                <div class="mb-4">
+                    <h2>Allgemeines</h2>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="Cocktails">Name:</label>
+                                <input type="text" class="form-control" id="Cocktails" name="Cocktails" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Kategorie1">Kategorie:</label>
+                                <input type="text" class="form-control" id="Kategorie1" name="Kategorie 1">
+                            </div>
+                            <div class="form-group">
+                                <label for="Glas1">Glas:</label>
+                                <input type="text" class="form-control" id="Glas1" name="Glas 1">
+                            </div>
+                            <div class="form-group">
+                                <label for="Autor">Autor:</label>
+                                <input type="text" class="form-control" id="Autor" name="Autor">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Bekanntheit">Bekanntheit:</label>
+                                <input type="number" class="form-control" id="Bekanntheit" name="Bekanntheit">
+                            </div>
+                            <div class="form-group">
+                                <label for="Süße">Süße:</label>
+                                <input type="number" class="form-control" id="Süße" name="Süße">
+                            </div>
+                            <div class="form-group">
+                                <label for="Fruchtigkeit">Fruchtigkeit:</label>
+                                <input type="number" class="form-control" id="Fruchtigkeit" name="Fruchtigkeit">
+                            </div>
+                            <div class="form-group">
+                                <label for="Säure">Säure:</label>
+                                <input type="number" class="form-control" id="Säure" name="Säure">
+                            </div>
+                            <div class="form-group">
+                                <label for="AlkoholRelative">Stärke:</label>
+                                <input type="number" class="form-control" id="AlkoholRelative" name="Alkohol-%">
+                            </div>
+                            <div class="form-group">
+                                <label for="Bitterkeit">Bitterkeit:</label>
+                                <input type="number" class="form-control" id="Bitterkeit" name="Bitterkeit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add empty line before Ingredients section -->
+                <br>
+
+                <!-- Ingredients Section -->
+                <div class="mb-4">
+                    <h2>Zutaten</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge1">Menge 1:</label>
+                                    <input type="text" class="form-control" id="Menge1" name="Menge1">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat1">Zutat 1:</label>
+                                    <input type="text" class="form-control" id="Zutat1" name="Zutat 1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge2">Menge 2:</label>
+                                    <input type="text" class="form-control" id="Menge2" name="Menge2">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat2">Zutat 2:</label>
+                                    <input type="text" class="form-control" id="Zutat2" name="Zutat 2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge3">Menge 3:</label>
+                                    <input type="text" class="form-control" id="Menge3" name="Menge3">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat3">Zutat 3:</label>
+                                    <input type="text" class="form-control" id="Zutat3" name="Zutat 3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge4">Menge 4:</label>
+                                    <input type="text" class="form-control" id="Menge4" name="Menge4">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat4">Zutat 4:</label>
+                                    <input type="text" class="form-control" id="Zutat4" name="Zutat 4">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge5">Menge 5:</label>
+                                    <input type="text" class="form-control" id="Menge5" name="Menge5">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat5">Zutat 5:</label>
+                                    <input type="text" class="form-control" id="Zutat5" name="Zutat 5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge6">Menge 6:</label>
+                                    <input type="text" class="form-control" id="Menge6" name="Menge6">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat6">Zutat 6:</label>
+                                    <input type="text" class="form-control" id="Zutat6" name="Zutat 6">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge7">Menge 7:</label>
+                                    <input type="text" class="form-control" id="Menge7" name="Menge7">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat7">Zutat 7:</label>
+                                    <input type="text" class="form-control" id="Zutat7" name="Zutat 7">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge8">Menget 8:</label>
+                                    <input type="text" class="form-control" id="Menge8" name="Menge8">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat8">Zutat 8:</label>
+                                    <input type="text" class="form-control" id="Zutat8" name="Zutat 8">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge9">Menge 9:</label>
+                                    <input type="text" class="form-control" id="Menge9" name="Menge9">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat9">Zutat 9:</label>
+                                    <input type="text" class="form-control" id="Zutat9" name="Zutat 9">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label for="Menge10">Menge 10:</label>
+                                    <input type="text" class="form-control" id="Menge10" name="Menge10">
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="Zutat10">Zutat 10:</label>
+                                    <input type="text" class="form-control" id="Zutat10" name="Zutat 10">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add empty line before Description section -->
+                <br>
+
+                <!-- Description Section -->
+                <div class="mb-4">
+                    <h2>Beschreibung</h2>
+                    <div class="form-group">
+                        <label for="Zubereitung">Zubereitung:</label>
+                        <textarea class="form-control" id="Zubereitung" name="Zubereitung"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Kurzbeschreibung">Subtitel:</label>
+                        <textarea class="form-control" id="Kurzbeschreibung" name="Kurzbeschreibung"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="SubkapitelÜberschrift">Textblock Überschrift:</label>
+                        <input type="text" class="form-control" id="SubkapitelÜberschrift" name="Subkapitel Überschrift">
+                    </div>
+                    <div class="form-group">
+                        <label for="Subtext">Textblock:</label>
+                        <textarea class="form-control" id="Subtext" name="Subtext"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Historisches">Historisches:</label>
+                        <textarea class="form-control" id="Historisches" name="Historisches"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary mt-3">Einreichen</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Navbar JS with relative path -->
+    <script src="../navbar.js"></script>
+</body>
+</html>
