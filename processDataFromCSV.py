@@ -5,6 +5,7 @@ from collections import defaultdict
 import unicodedata
 import re
 
+
 def process_csv():
     csv_folder = 'csv_handover'
     file_path = None
@@ -99,7 +100,7 @@ def process_csv():
 
 
 def filter_available_cocktails(cocktails):
-    cocktailsAvailable = [cocktail for cocktail in cocktails if cocktail['ingredients_available'] and cocktail.get('appearance_type') != 'versteckt']
+    cocktailsAvailable = [cocktail for cocktail in cocktails if cocktail['ingredients_available'] and cocktail.get('appereance_type') != 'versteckt']
     return cocktailsAvailable
 
 
@@ -107,7 +108,7 @@ def sort_categories(available_cocktails):
     # Convert the list of cocktails into a dictionary
     categorized_cocktails = {i: cocktail for i, cocktail in enumerate(available_cocktails)}
 
-    for _ in range(5):
+    for iteration in range(5):
         # Count the number of cocktails in each category and alternative category
         category_counts = defaultdict(int)
         alternative_category_counts = defaultdict(int)
@@ -121,17 +122,47 @@ def sort_categories(available_cocktails):
             if (category_counts[cocktail['category']] + 1) < alternative_category_counts[cocktail['alternative_category']]:
                 cocktail['category'], cocktail['alternative_category'] = cocktail['alternative_category'], cocktail['category']
 
-    # Recount categories after possible switches
+        # Recount categories after possible switches
+        category_counts = defaultdict(int)
+        for cocktail in categorized_cocktails.values():
+            category_counts[cocktail['category']] += 1
+
+    # Final recount of categories after all iterations
     category_counts = defaultdict(int)
     for cocktail in categorized_cocktails.values():
         category_counts[cocktail['category']] += 1
 
-    # Move cocktails in categories with one or two cocktails to 'Sonstige'
+    # Minimize the number of cocktails in Shortdrink and Longdrink categories
+    for cocktail in categorized_cocktails.values():
+        if cocktail['category'] in ['Shortdrink', 'Longdrink'] and cocktail['alternative_category']:
+            cocktail['category'], cocktail['alternative_category'] = cocktail['alternative_category'], cocktail['category']
+
+    # Final recount of categories before moving small categories to 'Fancy'
+    category_counts = defaultdict(int)
+    for cocktail in categorized_cocktails.values():
+        category_counts[cocktail['category']] += 1
+
+    # Move cocktails in categories with one or two cocktails to 'Fancy'
     for cocktail in categorized_cocktails.values():
         if category_counts[cocktail['category']] <= 2:
-            cocktail['category'] = 'Sonstige'
+            cocktail['category'] = 'Fancy'
 
-    return categorized_cocktails
+    # Final recount after moving small categories to 'Fancy'
+    category_counts = defaultdict(int)
+    for cocktail in categorized_cocktails.values():
+        category_counts[cocktail['category']] += 1
+
+    # Define the order of categories
+    category_order = [
+        "Klassiker", "Aperitif", "Brunch", "Digestif", "Fashioned Twists", "Sours", "Tiki",
+        "Espresso", "Bucks und Mules", "Fizz und Collins", "Punch", "Fruchtig", "Highball",
+        "Longdrink", "Martini", "Shortdrink", "Shooter", "Signature", "Fancy"
+    ]
+
+    # Sort the categorized cocktails by the defined category order and maintain the original dictionary structure
+    sorted_categorized_cocktails = {i: cocktail for i, cocktail in sorted(categorized_cocktails.items(), key=lambda item: category_order.index(item[1]['category']))}
+
+    return sorted_categorized_cocktails
 
 
 def write_index(categorized_cocktails):
@@ -240,6 +271,7 @@ def simplify_string(input_string):
     simplified_string = re.sub(r'[^a-z0-9]', '', ascii_string.lower())
     
     return simplified_string
+
 
 def generate_img_tag(cocktail_name):
     simplified_name = simplify_string(cocktail_name)
