@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="wrapper">
+        <div id="cocktail-container" class="container mt-5">
+            <!-- Der Cocktail-Inhalt wird hier dynamisch geladen -->
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../navbar.js"></script>
+    <script>
+        // Funktion zum Abrufen der URL-Parameter
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Hole die ID des Cocktails aus den URL-Parametern
+        const cocktailId = getQueryParam('id');
+
+        // Dynamisch den Cocktail-Inhalt laden
+        fetch('../cocktails.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Fehler beim Laden der Cocktail-Daten.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const categories = data.categories;
+                let foundCocktail = null;
+
+                // Suche nach dem Cocktail basierend auf der ID
+                for (const cocktails of Object.values(categories)) {
+                    foundCocktail = cocktails.find(cocktail => cocktail.ID === cocktailId);
+                    if (foundCocktail) break; // Beende die Suche, wenn der Cocktail gefunden wurde
+                }
+
+                const container = document.getElementById('cocktail-container');
+
+                if (!foundCocktail) {
+                    // Zeige eine Fehlermeldung an, falls der Cocktail nicht gefunden wurde
+                    container.innerHTML = `<p class="text-danger">Cocktail mit der ID "${cocktailId}" wurde nicht gefunden.</p>`;
+                    return;
+                }
+
+                // Setze den Seitentitel auf den Namen des Cocktails
+                document.title = foundCocktail.Name;
+
+                // Dynamisch den Cocktail-Inhalt generieren
+                const rows = []; // Array für Tabellenzeilen
+
+                for (let i = 1; i <= 7; i++) {
+                    const zutatKey = `Zutat ${i}`;
+                    const mengeKey = `Menge ${i}`;
+                    if (foundCocktail[zutatKey] && foundCocktail[mengeKey]) {
+                        rows.push(`
+                            <tr>
+                                <td class="text-end">${foundCocktail[mengeKey]}</td> <!-- Menge -->
+                                <td>${foundCocktail[zutatKey]}</td> <!-- Zutat -->
+                            </tr>
+                        `); // Füge Menge und Zutat in eine Tabellenzeile ein
+                    }
+                }
+
+                const glas1 = foundCocktail['Glas 1'] ? `<p><strong>Glas 1:</strong> ${foundCocktail['Glas 1']}</p>` : '';
+                const glas2 = foundCocktail['Glas 2'] ? `<p><strong>Glas 2:</strong> ${foundCocktail['Glas 2']}</p>` : '';
+                const zubereitung = foundCocktail.Zubereitung ? `<p><strong>Zubereitung:</strong> ${foundCocktail.Zubereitung}</p>` : '';
+
+                container.innerHTML = `
+                    <h1>${foundCocktail.Name}</h1>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center">
+                                    <img src="/Fotos/${foundCocktail.ID || 'empty_glass'}.png" alt="${foundCocktail.ID}" class="img-fluid custom-size-big" onerror="this.onerror=null;this.src='/assets/empty_glass.png';">
+                                </div>
+                                <div class="col-8">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            ${rows.join('')} <!-- Tabellenzeilen -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            ${glas1}
+                            ${glas2}
+                            ${zubereitung}
+                        </div>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                const container = document.getElementById('cocktail-container');
+                container.innerHTML = `<p class="text-danger">${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>
+

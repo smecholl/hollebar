@@ -1,0 +1,187 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid #000;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="wrapper">
+        <div id="cocktail-container" class="container mt-5">
+            <!-- Der Cocktail-Inhalt wird hier dynamisch geladen -->
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../navbar.js"></script>
+    <script>
+        // Funktion zum Abrufen der URL-Parameter
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Hole die ID des Cocktails aus den URL-Parametern
+        const cocktailId = getQueryParam('id');
+
+        // Dynamisch den Cocktail-Inhalt laden
+        fetch('cocktails.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Fehler beim Laden der Cocktail-Daten.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const categories = data.categories;
+                let foundCocktail = null;
+
+                // Suche nach dem Cocktail basierend auf der ID
+                for (const cocktails of Object.values(categories)) {
+                    foundCocktail = cocktails.find(cocktail => cocktail.ID === cocktailId);
+                    if (foundCocktail) break; // Beende die Suche, wenn der Cocktail gefunden wurde
+                }
+
+                const container = document.getElementById('cocktail-container');
+
+                if (!foundCocktail) {
+                    // Zeige eine Fehlermeldung an, falls der Cocktail nicht gefunden wurde
+                    container.innerHTML = `<p class="text-danger">Cocktail mit der ID "${cocktailId}" wurde nicht gefunden.</p>`;
+                    return;
+                }
+
+                // Setze den Seitentitel auf den Namen des Cocktails
+                document.title = foundCocktail.Name;
+
+                // Dynamisch den Cocktail-Inhalt generieren
+                const rows = []; // Array für Tabellenzeilen
+
+                for (let i = 1; i <= 7; i++) {
+                    const zutatKey = `Zutat ${i}`;
+                    const mengeKey = `Menge ${i}`;
+                    if (foundCocktail[zutatKey] && foundCocktail[mengeKey]) {
+                        rows.push(`
+                            <tr>
+                                <td class="text-end">${foundCocktail[mengeKey]}</td> <!-- Menge -->
+                                <td>${foundCocktail[zutatKey]}</td> <!-- Zutat -->
+                            </tr>
+                        `); // Füge Menge und Zutat in eine Tabellenzeile ein
+                    }
+                }
+
+                const ratings = {
+                    Bekanntheit: 'Bekanntheit',
+                    Süße: 'Süße',
+                    Fruchtigkeit: 'Fruchtigkeit',
+                    Säure: 'Säure',
+                    Bitterkeit: 'Bitterkeit',
+                    Stärke: 'Stärke'
+                };
+
+                const ratingLabels = [];
+                const ratingIcons = [];
+                Object.keys(ratings).forEach(rating => {
+                    const level = parseInt(foundCocktail[rating] || "0", 10);
+                    const filledIcons = Array(level).fill('<i class="fas fa-martini-glass-citrus dark-blue"></i>').join(' ');
+                    const emptyIcons = Array(3 - level).fill('<i class="fas fa-martini-glass light-grey"></i>').join(' ');
+                    ratingLabels.push(`<li>${ratings[rating]}:</li>`);
+                    ratingIcons.push(`<li>${filledIcons} ${emptyIcons}</li>`);
+                });
+
+                // Optional: Subkapitel und Subtexte hinzufügen
+                const subtitleSection = foundCocktail["Subkapitel Überschrift"] 
+                    ? `<div class='container mt-5'><h2>${foundCocktail["Subkapitel Überschrift"]}</h2></div>` 
+                    : '';
+                const subtextSection = foundCocktail["Subtext"] 
+                    ? `<div class='container mt-5'><p>${foundCocktail["Subtext"]}</p></div>` 
+                    : '';
+                const subsubTitleSection = foundCocktail["Subsubkapitel Überschrift"] 
+                    ? `<div class='container mt-5'><h2>${foundCocktail["Subsubkapitel Überschrift"]}</h2></div>` 
+                    : '';
+                const subsubTextSection = foundCocktail["Subsubtext"] 
+                    ? `<div class='container mt-5'><p>${foundCocktail["Subsubtext"]}</p></div>` 
+                    : '';
+
+                // Kurzbeschreibung und Autor hinzufügen
+                const descriptionSection = foundCocktail.Kurzbeschreibung || '';
+                const authorSection = foundCocktail.Autor ? ` von ${foundCocktail.Autor}` : '';
+                const typewriterText = `${descriptionSection}${authorSection}`;
+
+                container.innerHTML = `
+                    <h1>${foundCocktail.Name}</h1>
+                    <h2 class="text-muted">
+                        <span class="typewriter">${typewriterText}</span>
+                    </h2>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center">
+                                    <img src="/Fotos/${foundCocktail.ID || 'empty_glass'}.png" alt="${foundCocktail.ID}" class="img-fluid custom-size-big" onerror="this.onerror=null;this.src='/assets/empty_glass.png';">
+                                </div>
+                                <div class="col-8">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            ${rows.join('')} <!-- Tabellenzeilen -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6 text-end">
+                                    <ul class="list-unstyled">
+                                        ${ratingLabels.join('')} <!-- Nur Labels -->
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        ${ratingIcons.join('')} <!-- Nur Icons -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ${subtitleSection}
+                    ${subtextSection}
+                    ${subsubTitleSection}
+                    ${subsubTextSection}
+                    ${foundCocktail.Historisches 
+                        ? `<div class="container mt-5">
+                            <h2>Historisches</h2>
+                            <p>${foundCocktail.Historisches}</p>
+                           </div>`
+                        : ''}
+
+                `;
+            })
+            .catch(error => {
+                const container = document.getElementById('cocktail-container');
+                container.innerHTML = `<p class="text-danger">${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>

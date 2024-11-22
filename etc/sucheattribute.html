@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktailfinder</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- noUiSlider CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" rel="stylesheet">
+    <style>
+        .table-container {
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .slider-container {
+            margin-top: 20px;
+        }
+
+        #slider,
+        #sweetness-slider,
+        #fruitiness-slider,
+        #sourness-slider,
+        #alcohol-slider,
+        #bitterness-slider {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        .noUi-tooltip {
+            display: none !important;
+        }
+
+        /* Smaller Slider Size and Different Color */
+        #slider .noUi-connect,
+        #sweetness-slider .noUi-connect,
+        #fruitiness-slider .noUi-connect,
+        #sourness-slider .noUi-connect,
+        #alcohol-slider .noUi-connect,
+        #bitterness-slider .noUi-connect {
+            background: #f6c7adc5;
+        }
+
+        .noUi-target,
+        .noUi-target * {
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Placeholder for Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Wrapper for centering content and adding side images -->
+    <div class="wrapper">
+        <div class="container mt-5">
+            <div class="slider-container mt-5">
+                <label for="slider" class="form-label">Bekanntheit</label>
+                <div id="slider"></div>
+            </div>
+            <div class="slider-container mt-5">
+                <label for="sweetness-slider" class="form-label">Süße</label>
+                <div id="sweetness-slider"></div>
+            </div>
+            <div class="slider-container mt-5">
+                <label for="fruitiness-slider" class="form-label">Fruchtigkeit</label>
+                <div id="fruitiness-slider"></div>
+            </div>
+            <div class="slider-container mt-5">
+                <label for="sourness-slider" class="form-label">Säure</label>
+                <div id="sourness-slider"></div>
+            </div>
+            <div class="slider-container mt-5">
+                <label for="alcohol-slider" class="form-label">Stärke</label>
+                <div id="alcohol-slider"></div>
+            </div>
+            <div class="slider-container mt-5">
+                <label for="bitterness-slider" class="form-label">Bitterkeit</label>
+                <div id="bitterness-slider"></div>
+            </div>
+            <div class="table-container mt-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Zutaten</th>
+                        </tr>
+                    </thead>
+                    <tbody id="range-results-table">
+                        <!-- Results will be displayed here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Navbar JS with relative path -->
+    <script src="../navbar.js"></script>
+    <!-- noUiSlider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    <script>
+        // JavaScript code to load JSON data and handle search functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            let jsonData = [];
+
+            fetch('../cocktails.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    jsonData = Object.values(data.categories).flat(); // Flatten the categories into a single array
+                    console.log('Data loaded successfully:', jsonData);
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON data:', error);
+                });
+
+            const rangeResultsTable = document.getElementById('range-results-table');
+
+            function simplifyString(inputString) {
+                const replacements = {
+                    'ö': 'o', 'ü': 'u', 'ä': 'a', 'ß': 'ss', 'ñ': 'n', 'ç': 'c',
+                };
+                for (const [original, replacement] of Object.entries(replacements)) {
+                    inputString = inputString.replace(new RegExp(original, 'g'), replacement);
+                }
+
+                const normalizedString = inputString.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                const simplifiedString = normalizedString.replace(/[^a-z0-9]/gi, '').toLowerCase();
+                return simplifiedString;
+            }
+
+            function updateResults() {
+                const bekanntheitRange = bekanntheitSlider.noUiSlider.get().map(Number);
+                const sweetnessRange = sweetnessSlider.noUiSlider.get().map(Number);
+                const fruitinessRange = fruitinessSlider.noUiSlider.get().map(Number);
+                const sournessRange = sournessSlider.noUiSlider.get().map(Number);
+                const alcoholRange = alcoholSlider.noUiSlider.get().map(Number);
+                const bitternessRange = bitternessSlider.noUiSlider.get().map(Number);
+
+                const rangeFilteredData = jsonData.filter(cocktail => {
+                    if (cocktail.Zustand === "versteckt") {
+                        return false; // Skip "versteckt" entries
+                    }
+
+                    const bekanntheit = parseInt(cocktail.Bekanntheit);
+                    const sweetness = parseInt(cocktail.Süße);
+                    const fruitiness = parseInt(cocktail.Fruchtigkeit);
+                    const sourness = parseInt(cocktail.Säure);
+                    const alcohol = parseInt(cocktail['Stärke']);
+                    const bitterness = parseInt(cocktail.Bitterkeit);
+
+                    return (
+                        bekanntheit >= bekanntheitRange[0] && bekanntheit <= bekanntheitRange[1] &&
+                        sweetness >= sweetnessRange[0] && sweetness <= sweetnessRange[1] &&
+                        fruitiness >= fruitinessRange[0] && fruitiness <= fruitinessRange[1] &&
+                        sourness >= sournessRange[0] && sourness <= sournessRange[1] &&
+                        alcohol >= alcoholRange[0] && alcohol <= alcoholRange[1] &&
+                        bitterness >= bitternessRange[0] && bitterness <= bitternessRange[1]
+                    );
+                });
+
+                console.log('Range filtered data:', rangeFilteredData); // Debug: log filtered data
+
+                rangeResultsTable.innerHTML = '';
+                rangeFilteredData.forEach(cocktail => {
+                    const ingredients = [];
+                    for (let i = 1; i <= 7; i++) {
+                        if (cocktail[`Zutat ${i}`]) {
+                            ingredients.push(cocktail[`Zutat ${i}`]);
+                        }
+                    }
+                    const ingredientNames = ingredients.join(', ');
+
+                    let availabilityIcon;
+                    switch (cocktail.Zustand) {
+                        case "Karte":
+                            availabilityIcon = '<span style="color:green;">&#10003;</span>';
+                            break;
+                        case "Cocktail des Tages":
+                            availabilityIcon = '<i class="fas fa-crown" style="color:gold;"></i>';
+                            break;
+                        case "Sonderedition":
+                            availabilityIcon = '<i class="fas fa-star" style="color:gold;"></i>';
+                            break;
+                        case "Hintergrund":
+                            availabilityIcon = '<span style="color:yellow;">&#x2753;</span>';
+                            break;
+                        default:
+                            availabilityIcon = '';
+                    }
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${availabilityIcon}</td>
+                        <td><a href="../cocktail.html?id=${cocktail.ID}">${cocktail.Name}</a></td>
+                        <td>${ingredientNames}</td>
+                    `;
+                    rangeResultsTable.appendChild(row);
+                });
+            }
+
+            const bekanntheitSlider = createSlider('slider');
+            const sweetnessSlider = createSlider('sweetness-slider');
+            const fruitinessSlider = createSlider('fruitiness-slider');
+            const sournessSlider = createSlider('sourness-slider');
+            const alcoholSlider = createSlider('alcohol-slider');
+            const bitternessSlider = createSlider('bitterness-slider');
+
+            bekanntheitSlider.noUiSlider.on('update', updateResults);
+            sweetnessSlider.noUiSlider.on('update', updateResults);
+            fruitinessSlider.noUiSlider.on('update', updateResults);
+            sournessSlider.noUiSlider.on('update', updateResults);
+            alcoholSlider.noUiSlider.on('update', updateResults);
+            bitternessSlider.noUiSlider.on('update', updateResults);
+        });
+
+        function createSlider(elementId) {
+            const slider = document.getElementById(elementId);
+            noUiSlider.create(slider, {
+                start: [0, 3],
+                connect: true,
+                range: {
+                    'min': 0,
+                    'max': 3
+                },
+                step: 1,
+                tooltips: false,
+                format: {
+                    to: function (value) {
+                        return value.toFixed(0);
+                    },
+                    from: function (value) {
+                        return Number(value);
+                    }
+                }
+            });
+            return slider;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktailfinder</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ion.RangeSlider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/ion-rangeslider/css/ion.rangeSlider.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .table-container {
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .slider-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Placeholder for Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Wrapper for centering content and adding side images -->
+    <div class="wrapper">
+        <div class="container mt-5">
+            <input type="text" id="search-bar" class="form-control" placeholder="Suche nach ...">
+            <div class="table-container mt-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Zutaten</th>
+                            <th>gefunden in</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-table">
+                        <!-- Results will be displayed here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Ion.RangeSlider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+    <!-- Include Navbar JS with relative path -->
+    <script src="../navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let jsonData = [];
+
+            fetch('../cocktails.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    jsonData = Object.values(data.categories).flat(); // Flatten the categories into a single array
+                    console.log('Data loaded successfully:', jsonData);
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON data:', error);
+                });
+
+            const searchBar = document.getElementById('search-bar');
+            const resultsTable = document.getElementById('results-table');
+
+            function simplifyString(inputString) {
+                const replacements = {
+                    'ö': 'o', 'ü': 'u', 'ä': 'a', 'ß': 'ss', 'ñ': 'n', 'ç': 'c',
+                };
+                for (const [original, replacement] of Object.entries(replacements)) {
+                    inputString = inputString.replace(new RegExp(original, 'g'), replacement);
+                }
+
+                const normalizedString = inputString.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                const simplifiedString = normalizedString.replace(/[^a-z0-9]/gi, '').toLowerCase();
+                return simplifiedString;
+            }
+
+            searchBar.addEventListener('input', function () {
+                const query = searchBar.value.toLowerCase();
+                console.log('Search query:', query);
+
+                const filteredData = jsonData.filter(cocktail => {
+                    if (cocktail.Zustand === "versteckt") {
+                        return false; // Skip "versteckt" entries
+                    }
+
+                    return Object.keys(cocktail).some(key => {
+                        if (key.startsWith('Zutat') && cocktail[key]) {
+                            return String(cocktail[key]).toLowerCase().includes(query);
+                        } else {
+                            return String(cocktail[key]).toLowerCase().includes(query);
+                        }
+                    });
+                });
+
+                console.log('Filtered data:', filteredData);
+
+                resultsTable.innerHTML = '';
+                filteredData.forEach(cocktail => {
+                    const ingredients = [];
+                    for (let i = 1; i <= 7; i++) {
+                        if (cocktail[`Zutat ${i}`]) {
+                            ingredients.push(cocktail[`Zutat ${i}`]);
+                        }
+                    }
+                    const ingredientNames = ingredients.join(', ');
+
+                    let availabilityIcon;
+                    switch (cocktail.Zustand) {
+                        case "Karte":
+                            availabilityIcon = '<span style="color:green;">&#10003;</span>';
+                            break;
+                        case "Cocktail des Tages":
+                            availabilityIcon = '<i class="fas fa-crown" style="color:gold;"></i>';
+                            break;
+                        case "Sonderedition":
+                            availabilityIcon = '<i class="fas fa-star" style="color:gold;"></i>';
+                            break;
+                        case "Hintergrund":
+                            availabilityIcon = '<span style="color:yellow;">&#x2753;</span>';
+                            break;
+                        default:
+                            availabilityIcon = '';
+                    }
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${availabilityIcon}</td>
+                        <td><a href="../cocktail.html?id=${cocktail.ID}">${cocktail.Name}</a></td>
+                        <td>${ingredientNames}</td>
+                        <td>${Object.keys(cocktail).find(key => String(cocktail[key]).toLowerCase().includes(query))}</td>
+                    `;
+                    resultsTable.appendChild(row);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
